@@ -3,7 +3,7 @@ import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 
 
-class TodoList extends Component {
+class Notes extends Component {
   
   createItem(item) {
     return <ListItem key={item.text}>{item.text}</ListItem>;
@@ -17,4 +17,4 @@ class TodoList extends Component {
   }
 }
 
-export default TodoList;
+export default Notes;

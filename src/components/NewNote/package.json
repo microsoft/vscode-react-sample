@@ -2,6 +2,6 @@
     "author": "waderyan",
     "version": "0.1.0",
     "private": true,
-    "name": "new-todo",
-    "main": "./NewTodo.js"
+    "name": "new-note",
+    "main": "./NewNote.js"
 }

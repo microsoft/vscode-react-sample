@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TextField from 'material-ui/lib/text-field';
 
-class NewTodo extends Component {
+class NewNote extends Component {
     
     constructor() {
         super();
@@ -10,10 +10,10 @@ class NewTodo extends Component {
     render() {
         return (
             <div>
-                <TextField hintText="New todo item"/><br/>
+                <TextField hintText="New note"/><br/>
             </div>
         );
     }
 }
 
-export default NewTodo;
+export default NewNote;

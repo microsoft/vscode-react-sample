@@ -7,7 +7,6 @@ import NewNote from '../NewNote';
 
 import s from './App.scss';
 
-
 class App extends Component {
 
     constructor() {
@@ -16,6 +15,9 @@ class App extends Component {
             notes: [
                 {
                     text: "go to the grocery store"
+                },
+                {
+                    text: 'read medium article about engineering'
                 },
                 {
                     text: 'create build session'
@@ -37,12 +39,12 @@ class App extends Component {
         return (
             <div className={s.app}>
                 <AppBar
-                  title="Notes"
-                  iconClassNameRight="muidocs-icon-navigation-expand-more"
-                />
+                    title="Notes"
+                    iconClassNameRight="muidocs-icon-navigation-expand-more"
+                    />
                 <div style={{
-                  marginTop: 20,
-                  marginLeft: 20
+                    marginTop: 20,
+                    marginLeft: 20
                 }}>
                     <NewNote />
                     <Notes items={this.state.notes}/>
@@ -55,5 +57,6 @@ class App extends Component {
 App.childContextTypes = {
     muiTheme: PropTypes.object
 };
+
 
 export default App;

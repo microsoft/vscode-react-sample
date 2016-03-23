@@ -15,13 +15,13 @@ class App extends Component {
         this.state = {
             todos: [
                 {
-                    text: 'Go to the grocery store'
-                },
-                {
                     text: 'Book flight for build'
                 },
                 {
                     text: 'Write a cool, new app'
+                },
+                {
+                    text: 'Create a react todo list app'
                 }
             ]
         };

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import DoneIcon from 'material-ui/lib/svg-icons/action/done';
@@ -6,7 +6,7 @@ import DoneIcon from 'material-ui/lib/svg-icons/action/done';
 import TodosStore from './TodosStore';
 
 
-class Todos extends Component {
+class Todos extends React.Component {
   
   constructor() {
       super();

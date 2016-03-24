@@ -3,6 +3,8 @@ import TextField from 'material-ui/lib/text-field';
 
 import TodosStore from './TodosStore';
 
+const RETURN_KEY_CODE = 13;
+
 class NewTodo extends React.Component {
     
     constructor() {
@@ -14,12 +16,17 @@ class NewTodo extends React.Component {
     }
     
     onKeyDown(event) {
-        if (event.keyCode === 13) {
-            console.log('enter was pressed');
+        if (event.keyCode === RETURN_KEY_CODE) {
+            let text = event.target.value.trim();
+            if (text == '') {
+                return;
+            }
             TodosStore.add({
-                timestamp: new Date(),
                 text: event.target.value.trim()
             });
+            
+            // clear input
+            event.target.value = '';
         }
     }
     

@@ -1,40 +1,41 @@
 import _ from 'lodash';
 
+const seed = [{
+  text: 'Tweet about build',
+  id: 1
+}, {
+  text: 'Build an app',
+  id: 2
+}, {
+  text: 'Learn new tech',
+  id: 3
+}, {
+  text: 'PRs on VS Code',
+  id: 4
+}];
 
 class TodosStore {
   
   constructor() {
-    this.nodeCount = 10; 
-    this.notes = [{
-      text: 'Tweet about build',
-      id: 1
-    }, {
-      text: 'Build an app',
-      id: 2
-    }, {
-      text: 'Learn new tech',
-      id: 3
-    }, {
-      text: 'PRs on VS Code',
-      id: 4
-    }];
+    this.idCount = 10; 
+    this.todos = seed;
     this.subscribers = [];
   }
   
   add(note) {
-    this.nodeCount++;
-    note.id = this.nodeCount;
-    this.notes.push(note);
+    this.idCount++;
+    note.id = this.idCount;
+    this.todos.push(note);
      
     this.publish({
         actionType: 'add',
         data: note
     });
-    return this.nodeCount;
+    return this.idCount;
   }
   
   remove(note) {
-     _.remove(this.notes, (n) => {
+     _.remove(this.todos, (n) => {
          return n.id == note.id
      });
      this.publish({
@@ -44,11 +45,11 @@ class TodosStore {
   }
   
   getAll() {
-      return this.notes;
+      return this.todos;
   }
   
   publish(action) {
-    action.notes = this.getAll();
+    action.todos = this.getAll();
     this.subscribers.forEach((subscriber) => {
        subscriber(action); 
     });

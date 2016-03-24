@@ -17,14 +17,14 @@ class Todos extends React.Component {
         margin: '3%'
       };
       this.state = {
-        notes: TodosStore.getAll()
+        todos: TodosStore.getAll()
       };
   }
 
   componentDidMount() {
     TodosStore.subscribe((action) => {
       this.setState({
-        notes: action.notes
+        todos: action.todos
       });
     });
   }
@@ -33,19 +33,19 @@ class Todos extends React.Component {
     TodosStore.remove(note);
   }
   
-  create(note) {
+  create(todo) {
     return (<ListItem 
-              onMouseDown={this.handleClick.bind(null, note)} 
-              key={note.id}
+              onMouseDown={this.handleClick.bind(null, todo)} 
+              key={todo.id}
               leftIcon={<ChevronRightIcon />}
               >
-              {note.text}
+              {todo.text}
            </ListItem>
     );
   }
 
   render() {
-    const todos = this.state.notes.map(this.create.bind(this));
+    const todos = this.state.todos.map(this.create.bind(this));
     return (
       <List style={this.styles}>
         {todos}

@@ -2,10 +2,9 @@ import React, {Component, PropTypes} from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 
-import Notes from '../Notes';
-import NewNote from '../NewNote';
+import Notes from './Notes';
+import NewNote from './NewNote';
 
-import s from './App.scss';
 
 class App extends Component {
 
@@ -21,9 +20,16 @@ class App extends Component {
 
     render() {
         return (
-            <div className={s.app}>
+            <div styles={{
+                margin: 0,
+                width: '100%',
+                height: '100%'
+            }}>
                 <AppBar title="Notes" />
-                <div className={s.viewport}>
+                <div styles={{
+                    marginTop: 20,
+                    marginLeft: 20
+                }}>
                     <NewNote />
                     <Notes />
                 </div>

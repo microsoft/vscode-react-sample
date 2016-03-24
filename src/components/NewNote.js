@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import TextField from 'material-ui/lib/text-field';
 
+import NotesStore from './NotesStore';
+
 class NewNote extends Component {
     
     constructor() {
@@ -10,7 +12,9 @@ class NewNote extends Component {
     onKeyDown(event) {
         if (event.keyCode === 13) {
             console.log('enter was pressed');
-            // trigger an AddNote event
+            NotesStore.add({
+                // note data
+            });
         }
     }
     

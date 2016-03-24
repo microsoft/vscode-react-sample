@@ -10,7 +10,6 @@ class NewNote extends Component {
     onKeyDown(event) {
         if (event.keyCode === 13) {
             console.log('enter was pressed');
-            
         }
     }
     

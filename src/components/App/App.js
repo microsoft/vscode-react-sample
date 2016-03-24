@@ -9,16 +9,6 @@ import s from './App.scss';
 
 class App extends Component {
 
-    constructor() {
-        super();
-        this.state = this.getData();
-    }
-    
-    componentDidMount() {
-        // populate state from server
-        // poll for the data
-    }
-
     getChildContext(){
       return {
         muiTheme: getMuiTheme()
@@ -31,7 +21,7 @@ class App extends Component {
                 <AppBar title="Notes" />
                 <div className={s.viewport}>
                     <NewNote />
-                    <Notes items={this.state.notes}/>
+                    <Notes />
                 </div>
             </div>
         );

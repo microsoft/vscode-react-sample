@@ -10,9 +10,16 @@ class NewTodo extends React.Component {
     constructor() {
         super();
         this.styles = {
-            float: 'left',
-            width: '30%',
-            margin: '3%'
+            spacing: {
+                float: 'left',
+                width: '30%',
+                margin: '3%'
+            },
+            prompt: {
+                fontFamily: 'Roboto, sans-serif',
+                fontSize: 16,
+                lineHeight: '16px'
+            }
         };
     }
     
@@ -33,7 +40,8 @@ class NewTodo extends React.Component {
     
     render() {
         return (
-            <div style={this.styles} >
+            <div style={this.styles.spacing} >
+                <p style={this.styles.prompt}>What do you want to get done?</p>
                 <TextField 
                     onKeyDown={this.onKeyDown} 
                     hintText="New todo"

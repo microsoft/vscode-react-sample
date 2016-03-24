@@ -42,5 +42,4 @@ App.childContextTypes = {
     muiTheme: PropTypes.object
 };
 
-
 export default App;

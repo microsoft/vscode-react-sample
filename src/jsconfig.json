@@ -5,6 +5,6 @@
         "allowSyntheticDefaultImports": true
     }, 
     "exclude": [
-        "npm_modules"
+        "node_modules"
     ]
 }

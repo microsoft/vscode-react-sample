@@ -7,10 +7,17 @@ class NewNote extends Component {
         super();
     }
     
+    onKeyDown(event) {
+        if (event.keyCode === 13) {
+            console.log('enter was pressed');
+            
+        }
+    }
+    
     render() {
         return (
             <div>
-                <TextField hintText="New note"/><br/>
+                <TextField onKeyDown={this.onKeyDown} hintText="New todo"/>
             </div>
         );
     }

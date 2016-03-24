@@ -11,22 +11,12 @@ class App extends Component {
 
     constructor() {
         super();
-        this.state = {
-            notes: [
-                {
-                    text: "go to the grocery store"
-                },
-                {
-                    text: 'read medium article about engineering'
-                },
-                {
-                    text: 'create build session'
-                },
-                {
-                    text: 'fix bug #232'
-                }
-            ]
-        };
+        this.state = this.getData();
+    }
+    
+    componentDidMount() {
+        // populate state from server
+        // poll for the data
     }
 
     getChildContext(){
@@ -38,14 +28,8 @@ class App extends Component {
     render() {
         return (
             <div className={s.app}>
-                <AppBar
-                    title="Notes"
-                    iconClassNameRight="muidocs-icon-navigation-expand-more"
-                    />
-                <div style={{
-                    marginTop: 20,
-                    marginLeft: 20
-                }}>
+                <AppBar title="Notes" />
+                <div className={s.viewport}>
                     <NewNote />
                     <Notes items={this.state.notes}/>
                 </div>

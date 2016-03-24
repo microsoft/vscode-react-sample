@@ -9,6 +9,9 @@ class Notes extends Component {
   
   constructor() {
       super();
+      this.state = {
+        notes: NotesStore.getAll()
+      };
   }
 
   componentDidMount() {
@@ -19,14 +22,12 @@ class Notes extends Component {
     });
   }
   
-  handleClick(event) {
-    NotesStore.remove({
-      // note data
-    });
+  handleClick(note) {
+    NotesStore.remove(note);
   }
   
   create(note) {
-    return (<ListItem onMouseDown={this.handleClick} key={note.text}>
+    return (<ListItem onMouseDown={this.handleClick.bind(null, note)} key={note.id}>
               {note.text}
            </ListItem>
     );

@@ -13,7 +13,8 @@ class NewNote extends Component {
         if (event.keyCode === 13) {
             console.log('enter was pressed');
             NotesStore.add({
-                // note data
+                timestamp: new Date(),
+                text: event.target.value.trim()
             });
         }
     }

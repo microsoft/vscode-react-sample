@@ -3,7 +3,6 @@ import _ from 'lodash';
 class NotesStore {
   
   constructor() {
-    super();
     this.nodeCount = 0;
     this.notes = [];
     this.subscribers = [];

@@ -3,19 +3,24 @@ import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import DoneIcon from 'material-ui/lib/svg-icons/action/done';
 
-import NotesStore from './NotesStore';
+import TodosStore from './TodosStore';
 
-class Notes extends Component {
+
+class Todos extends Component {
   
   constructor() {
       super();
+      this.styles = {
+        float: 'left',
+        width: '50%'
+      };
       this.state = {
-        notes: NotesStore.getAll()
+        notes: TodosStore.getAll()
       };
   }
 
   componentDidMount() {
-    NotesStore.subscribe((action) => {
+    TodosStore.subscribe((action) => {
       this.setState({
         notes: action.notes
       });
@@ -23,7 +28,7 @@ class Notes extends Component {
   }
   
   handleClick(note) {
-    NotesStore.remove(note);
+    TodosStore.remove(note);
   }
   
   create(note) {
@@ -36,11 +41,11 @@ class Notes extends Component {
   render() {
     const todos = this.state.notes.map(this.create.bind(this));
     return (
-      <List style={{width: 400}}>
+      <List style={this.styles}>
         {todos}
       </List>
     );
   }
 }
 
-export default Notes;
+export default Todos;

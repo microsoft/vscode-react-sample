@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-class NotesStore {
+class TodosStore {
   
   constructor() {
     this.nodeCount = 0;
@@ -47,4 +47,4 @@ class NotesStore {
 }
 
 // export singleton
-export default new NotesStore();
+export default new TodosStore();

@@ -1,18 +1,22 @@
-import React, {Component} from 'react';
+import React from 'react';
 import TextField from 'material-ui/lib/text-field';
 
-import NotesStore from './NotesStore';
+import TodosStore from './TodosStore';
 
-class NewNote extends Component {
+class NewTodo extends React.Component {
     
     constructor() {
         super();
+        this.styles = {
+            float: 'left',
+            width: '30%'
+        };
     }
     
     onKeyDown(event) {
         if (event.keyCode === 13) {
             console.log('enter was pressed');
-            NotesStore.add({
+            TodosStore.add({
                 timestamp: new Date(),
                 text: event.target.value.trim()
             });
@@ -21,11 +25,11 @@ class NewNote extends Component {
     
     render() {
         return (
-            <div>
+            <div style={this.styles} >
                 <TextField onKeyDown={this.onKeyDown} hintText="New todo"/>
             </div>
         );
     }
 }
 
-export default NewNote;
+export default NewTodo;

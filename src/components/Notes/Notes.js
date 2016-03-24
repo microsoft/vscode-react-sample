@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Reflux from 'reflux';
-import NoteStore from '../../stores/NoteStore';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import DoneIcon from 'material-ui/lib/svg-icons/action/done';
@@ -8,39 +6,48 @@ import DoneIcon from 'material-ui/lib/svg-icons/action/done';
 
 class Notes extends Component {
   
-  getInitialState() {
-      return {
-          notes: {
+  constructor() {
+      super();
+      this.state = {
+          notes: [{
               text: 'some note'
-          }
+          }, 
+          {
+            text: 'another note'
+          }]
       };
   }
 
-  createItem(note) {
-    return (<ListItem key={note.text} rightIconButton={<DoneIcon />}>
+  create(note) {
+    return (<ListItem onMouseDown={this.handleClick} key={note.text}>
               {note.text}
            </ListItem>
     );
   }
   
   componentDidMount() {
-    
+    // register with dispatcher for AddNote actions
+    // register with dispatcher for RemoveNote actions
   }
   
-  onClick() {
-    // remove from list
+  componentWillUnmount() {
+    // unregister all event listeners
+  }
+  
+  handleClick() {
     console.log('removed note');
-    // trigger an undo ability
+    // dispatch a RemoveNote event
   }
 
   render() {
+    const todos = this.state.notes.map(this.create.bind(this));
     return (
-      <List style={{width: 400}}>{this.state.notes.map(this.createItem)}</List>
+      <List style={{width: 400}}>
+        {todos}
+      </List>
     );
   }
 }
-
-Notes.mixins = [Reflux.connect(NoteStore, 'notes')];
 
 
 export default Notes;

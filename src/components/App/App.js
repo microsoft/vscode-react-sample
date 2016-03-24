@@ -9,6 +9,10 @@ import s from './App.scss';
 
 class App extends Component {
 
+    constructor() {
+        super();
+    }
+
     getChildContext(){
       return {
         muiTheme: getMuiTheme()

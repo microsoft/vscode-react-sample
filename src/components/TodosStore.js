@@ -1,10 +1,23 @@
 import _ from 'lodash';
 
+
 class TodosStore {
   
   constructor() {
-    this.nodeCount = 0;
-    this.notes = [];
+    this.nodeCount = 10; 
+    this.notes = [{
+      text: 'Tweet about build',
+      id: 1
+    }, {
+      text: 'Build an app',
+      id: 2
+    }, {
+      text: 'Learn new tech',
+      id: 3
+    }, {
+      text: 'PRs on VS Code',
+      id: 4
+    }];
     this.subscribers = [];
   }
   
@@ -22,7 +35,7 @@ class TodosStore {
   
   remove(note) {
      _.remove(this.notes, (n) => {
-         return n.id != note.id
+         return n.id == note.id
      });
      this.publish({
          actionType: 'remove',

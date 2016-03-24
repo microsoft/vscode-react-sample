@@ -1,10 +1,19 @@
 import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import IconButton from 'material-ui/lib/icon-button';
+import StarIcon from 'material-ui/lib/svg-icons/toggle/star';
 
 import Viewport from './Viewport';
 
 class App extends React.Component {
+    
+    constructor() {
+        super();
+        this.styles ={
+            backgroundColor: '#000'
+        };
+    }
 
     getChildContext(){
       return {
@@ -15,7 +24,11 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <AppBar title="Todos" />
+                <AppBar 
+                    style={this.styles}
+                    iconElementLeft={<IconButton><StarIcon /></IconButton>}
+                    title="Todos" 
+                />
                 <Viewport />
             </div>
         );

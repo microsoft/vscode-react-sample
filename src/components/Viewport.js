@@ -8,8 +8,7 @@ class Viewport extends React.Component {
     constructor() {
         super();
         this.styles = {
-            marginTop: 20,
-            marginLeft: 20,
+            margin: '1%',
             width: '100%'
         };
     }

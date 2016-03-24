@@ -1,7 +1,8 @@
 import React from 'react';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
-import DoneIcon from 'material-ui/lib/svg-icons/action/done';
+import IconButton from 'material-ui/lib/icon-button';
+import ChevronRightIcon from 'material-ui/lib/svg-icons/navigation/chevron-right';
 
 import TodosStore from './TodosStore';
 
@@ -12,7 +13,8 @@ class Todos extends React.Component {
       super();
       this.styles = {
         float: 'left',
-        width: '50%'
+        width: '50%',
+        margin: '3%'
       };
       this.state = {
         notes: TodosStore.getAll()
@@ -32,7 +34,11 @@ class Todos extends React.Component {
   }
   
   create(note) {
-    return (<ListItem onMouseDown={this.handleClick.bind(null, note)} key={note.id}>
+    return (<ListItem 
+              onMouseDown={this.handleClick.bind(null, note)} 
+              key={note.id}
+              leftIcon={<ChevronRightIcon />}
+              >
               {note.text}
            </ListItem>
     );

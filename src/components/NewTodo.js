@@ -11,7 +11,8 @@ class NewTodo extends React.Component {
         super();
         this.styles = {
             float: 'left',
-            width: '30%'
+            width: '30%',
+            margin: '3%'
         };
     }
     
@@ -33,7 +34,11 @@ class NewTodo extends React.Component {
     render() {
         return (
             <div style={this.styles} >
-                <TextField onKeyDown={this.onKeyDown} hintText="New todo"/>
+                <TextField 
+                    onKeyDown={this.onKeyDown} 
+                    hintText="New todo"
+                    fullWidth={true}
+                />
             </div>
         );
     }

@@ -8,8 +8,5 @@
             "defaultParams": true
         }
     },
-    "rules": {
-        "semi": 2
-    },
     "parser": "babel-eslint"
 }

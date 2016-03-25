@@ -1,7 +1,7 @@
 {
-  "name": "projections",
+  "name": "react-todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple todo application to demo react and es6 in VS Code",
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",

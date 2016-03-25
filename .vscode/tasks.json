@@ -18,6 +18,15 @@
 		{
 			"taskName": "test",
 			"args": ["run", "test"]
-		}
+		},
+		{
+			"taskName": "build",
+			"args": ["run", "build"],
+			"isBuildCommand": true
+		},	
+		{
+			"taskName": "dev",
+			"args": ["run", "dev"]
+		}			
 	]
 }

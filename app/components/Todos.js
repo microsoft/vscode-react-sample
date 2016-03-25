@@ -16,12 +16,17 @@ class Todos extends React.Component {
         width: '50%',
         margin: '3%'
       };
-      this.state = {
-        todos: TodosStore.getAll()
-      };
+      this.state = { todos: [] };
   }
 
   componentDidMount() {
+    TodosStore.getAll().then((data) => {
+      console.log('get all', data);
+      this.setState({
+        todos: data.todos
+      });
+    });
+    
     TodosStore.subscribe((action) => {
       this.setState({
         todos: action.todos

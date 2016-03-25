@@ -2,28 +2,34 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch index.html with sourcemaps",
-			"type": "chrome",
+			"name": "Launch",
+			"type": "node",
 			"request": "launch",
-			"file": "${workspaceRoot}/index.html",
-			"sourceMaps": true,
-			"webRoot": "${workspaceRoot}"
+			"program": "${workspaceRoot}/server/server.js",
+			"stopOnEntry": false,
+			"args": [],
+			"cwd": "${workspaceRoot}",
+			"preLaunchTask": null,
+			"runtimeExecutable": null,
+			"runtimeArgs": [],
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"externalConsole": false,
+			"sourceMaps": false,
+			"outDir": null
 		},
 		{
-			"name": "Launch localhost with sourcemaps",
-			"type": "chrome",
-			"request": "launch",
-			"url": "http://localhost/mypage.html",
-			"sourceMaps": true,
-			"webRoot": "${workspaceRoot}/wwwroot"
-		},
-		{
-			"name": "Attach with sourcemaps",
-			"type": "chrome",
+			"name": "Attach",
+			"type": "node",
 			"request": "attach",
-			"port": 9222,
-			"sourceMaps": true,
-			"webRoot": "${workspaceRoot}/dist"
+			"port": 5858,
+			"address": "localhost",
+			"restart": false,
+			"sourceMaps": false,
+			"outDir": null,
+			"localRoot": "${workspaceRoot}",
+			"remoteRoot": null
 		}
 	]
 }

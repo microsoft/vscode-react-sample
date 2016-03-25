@@ -2,8 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var APP_ROOT = 'app';
+
 var entries = [
-     './src/client',
+     './' + APP_ROOT + '/client',
 	 'webpack-dev-server/client?http://localhost:8080',
 	 'webpack/hot/dev-server'
 ];
@@ -12,20 +14,20 @@ var loaders = [
     {
         test: /\.scss$/,
         loader: 'style!css?modules!sass',
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, APP_ROOT)
     },
     {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, APP_ROOT)
     }
 ];
 
 var plugins = [
      new webpack.HotModuleReplacementPlugin(),
      new HtmlWebpackPlugin({
-		template: './src/index.html',
-        favicon: './src/favicon.png'
+		template: './' + APP_ROOT + '/index.html',
+        favicon: './' + APP_ROOT + '/favicon.png'
 	 })
 ];
 

@@ -3,5 +3,9 @@
         "target": "ES6",
         "module": "commonjs",
         "allowSyntheticDefaultImports": true
-    }
+    },
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
 }

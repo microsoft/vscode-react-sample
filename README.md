@@ -3,9 +3,17 @@
 This demo shows the core functionality of [Visual Studio Code](https://code.visualstudio.com)
 for Build 2016 session workshop.
 
+![todo demo](/media/todo_demo.gif)
+
 ## Getting Started
 
 ```bash
+# clone repo
+git clone https://github.com/Microsoft/react-todo.git
+
+# navigate to repo
+cd react-todo
+
 # install deps
 npm install
 ```
@@ -41,11 +49,13 @@ server. This will become more robust overtime.
 }
 ```
 
-> Obviously, this type of database isn't scalable. 
+## Not meant for production
 
-## Demo
+There are a couple of issues to fix before this code base should
+be used as a model for a production ready application.
 
-![todo demo](/media/todo_demo.gif)
+* Swap out the file based data model for a real data backend.
+* Replace webpack dev server with an application server or serve up the app with the Node server.
 
 ## Technologies
 

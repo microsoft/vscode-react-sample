@@ -5,10 +5,11 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js --open"
+    "dev": "webpack-dev-server --config webpack.config.js --open",
+    "server": "node server/server.js"
   },
   "author": "waderyan",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
@@ -33,6 +34,8 @@
     "react-tap-event-plugin": "^0.2.2",
     "resolve-url-loader": "^1.4.3",
     "tether": "^1.2.0",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
   }
 }

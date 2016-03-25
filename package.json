@@ -16,7 +16,9 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "html-webpack-plugin": "^2.8.1",
-    "webpack": "^1.12.13",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {

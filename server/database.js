@@ -25,7 +25,7 @@ function add(todo, resolve) {
 
 function del(id, resolve) {
     getAll(function (data) {
-        todos = _.filter(data.todos, function (todo) {
+        var todos = _.filter(data.todos, function (todo) {
             return todo.id != id;
         });
         data.todos = todos;

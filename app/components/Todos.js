@@ -42,8 +42,9 @@ class Todos extends React.Component {
     return (<ListItem 
               onMouseDown={this.handleClick.bind(null, todo)} 
               key={todo.id}
-              leftIcon={<ChevronRightIcon />}>
-              {todo.text}
+              leftIcon={<ChevronRightIcon />}
+              primaryText={todo.text}
+              secondaryText={todo.timestamp}>
            </ListItem>
     );
   }

@@ -6,6 +6,7 @@ import StarIcon from 'material-ui/lib/svg-icons/toggle/star';
 
 import Viewport from './Viewport';
 
+
 class App extends React.Component {
     
     constructor() {
@@ -35,8 +36,10 @@ class App extends React.Component {
     }
 }
 
+
 App.childContextTypes = {
     muiTheme: React.PropTypes.object
 };
+
 
 export default App;

@@ -28,7 +28,7 @@ class App extends React.Component {
                 <AppBar 
                     style={this.styles}
                     iconElementLeft={<IconButton><StarIcon /></IconButton>}
-                    title="Todos" 
+                    title="Todos"
                 />
                 <Viewport />
             </div>

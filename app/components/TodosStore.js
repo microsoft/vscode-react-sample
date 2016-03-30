@@ -3,11 +3,12 @@ import $ from 'jquery';
 
 const URL = 'http://localhost:3001/todos'
 
-function getAll() {
+
+function remove(todo) {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: URL,
-      method: 'GET',
+      url: `${URL}/${todo.id}`,
+      method: 'DELETE',
       dataType: 'json',
       success: resolve,
       error: reject
@@ -15,11 +16,11 @@ function getAll() {
   });
 }
 
-function remove(todo) {
+function getAll() {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: `${URL}/${todo.id}`,
-      method: 'DELETE',
+      url: URL,
+      method: 'GET',
       dataType: 'json',
       success: resolve,
       error: reject

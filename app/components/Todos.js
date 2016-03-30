@@ -44,7 +44,8 @@ class Todos extends React.Component {
               key={todo.id}
               leftIcon={<ChevronRightIcon />}
               primaryText={todo.text}
-              secondaryText={""}>
+              secondaryText={todo.timestamp}
+              >
            </ListItem>
     );
   }

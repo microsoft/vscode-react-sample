@@ -29,10 +29,7 @@ class NewTodo extends React.Component {
             if (text == '') {
                 return;
             }
-            TodosStore.add({
-                text: event.target.value.trim(),
-                timestamp: new Date().toLocaleDateString()
-            });
+            TodosStore.add(event.target.value.trim());
             
             // clear input
             event.target.value = '';

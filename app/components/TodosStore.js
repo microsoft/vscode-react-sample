@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import $ from 'jquery';
+import TodoData from './TodoData';
 
 const URL = 'http://localhost:3001/todos'
 
@@ -28,7 +29,6 @@ function remove(todo) {
 }
 
 function add(todo) {
-  console.log('add', todo);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: `${URL}`,
@@ -52,9 +52,9 @@ class TodosStore {
     this.subscribers = [];
   }
   
-  add(todo) {
+  add(todoText) {
     this.idCount++;
-    todo.id = this.idCount;
+    let todo = new TodoData(todoText, this.idCount);
     
     add(todo).then(() => {
       this.publish({

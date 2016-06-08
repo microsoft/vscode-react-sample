@@ -38,6 +38,7 @@ server.get('/todos', function(req, res, next) {
 
 
 
+
 server.post('/todos', function(req, res, next) {
   var todo = req.body;
   database.add(todo, function(todos) {
@@ -54,6 +55,12 @@ server.delete('/todos/:id', function(req, res, next) {
     next();
   });
 });
+
+
+
+
+
+
 
 
 

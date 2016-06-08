@@ -66,9 +66,7 @@ server.delete('/todos/:id', function(req, res, next) {
 
 
 
-var PORT = 3002;
-server.listen(PORT, function() {
-  console.log('listening at %s', PORT);
-});
+var PORT = 3003;
+server.listen(PORT);
 
 

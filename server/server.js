@@ -6,13 +6,6 @@ var database = require('./database');
 var server = express();
 server.use(bodyParser.json());
 
-
-
-
-
-
-
-
 server.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE');
@@ -22,22 +15,12 @@ server.use(function (req, res, next) {
 });
 
 
-
-
-
-
-
 server.get('/todos', function(req, res, next) {
   database.getAll(function(todos) {
     res.send(todos);
     next();
   });
 });
-
-
-
-
-
 
 server.post('/todos', function(req, res, next) {
   var todo = req.body;
@@ -55,16 +38,6 @@ server.delete('/todos/:id', function(req, res, next) {
     next();
   });
 });
-
-
-
-
-
-
-
-
-
-
 
 var PORT = 3003;
 server.listen(PORT);

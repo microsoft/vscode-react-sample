@@ -5,13 +5,14 @@ var DATA = 'data/todos.json';
 var PRETTIFY_WS = 4;
 
 
+
 function getAll(resolve) {
     fs.readFile(DATA, function(err, data) {
       resolve(JSON.parse(data));
     });
 }
 
-function commit(data, resolve) {
+function commitData(data, resolve) {
     fs.writeFile(DATA, JSON.stringify(data, null, PRETTIFY_WS));
 }
 

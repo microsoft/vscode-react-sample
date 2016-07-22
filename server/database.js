@@ -14,16 +14,16 @@ function commit(data, resolve) {
     fs.writeFile(DATA, JSON.stringify(data, null, PRETTIFY_WS));
 }
 
-function get(id) {
-    
-}
-
 function add(todo, resolve) {
     getAll(function (data) {
         data.todos.push(todo);
         commit(data);
         resolve(data);
     });
+}
+
+function get(id) {
+    return;
 }
 
 function del(id, resolve) {

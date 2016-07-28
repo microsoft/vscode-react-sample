@@ -22,10 +22,6 @@ function add(todo, resolve) {
     });
 }
 
-function get(id) {
-    return;
-}
-
 function del(id, resolve) {
     getAll(function (data) {
         var todos = _.filter(data.todos, function (todo) {

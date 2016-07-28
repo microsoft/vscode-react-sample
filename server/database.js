@@ -1,12 +1,15 @@
 var fs = require('fs');
 var _ = require('lodash');
+var promise = require('promise');
 
 var DATA = 'data/todos.json';
-var PRETTIFY_WS = 4;
+var PRETTIFY_WS = 2;
 
-function getAll(resolve) {
-    fs.readFile(DATA, function(err, data) {
-      resolve(JSON.parse(data));
+function getAll() {
+    return new Promise((resolve, reject) => {
+        fs.readFile(DATA, function(err, data) {
+            resolve(JSON.parse(data));
+        });
     });
 }
 

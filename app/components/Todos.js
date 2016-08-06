@@ -1,8 +1,8 @@
 import React from 'react';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import IconButton from 'material-ui/lib/icon-button';
-import ChevronRightIcon from 'material-ui/lib/svg-icons/navigation/chevron-right';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+import IconButton from 'material-ui/IconButton';
+import ChevronRightIcon from 'material-ui/svg-icons/navigation/chevron-right';
 
 import TodosStore from './TodosStore';
 

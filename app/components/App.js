@@ -1,8 +1,8 @@
 import React from 'react';
-import AppBar from 'material-ui/lib/app-bar';
-import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
-import IconButton from 'material-ui/lib/icon-button';
-import StarIcon from 'material-ui/lib/svg-icons/toggle/star';
+import AppBar from 'material-ui/AppBar';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import IconButton from 'material-ui/IconButton';
+import StarIcon from 'material-ui/svg-icons/toggle/star';
 
 import Viewport from './Viewport';
 

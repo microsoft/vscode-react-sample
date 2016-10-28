@@ -12,7 +12,7 @@ class NewTodo extends React.Component {
         this.styles = {
             spacing: {
                 float: 'left',
-                width: '30%',
+                width '30%',
                 margin: '3%'
             },
             prompt: {

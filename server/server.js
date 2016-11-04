@@ -16,9 +16,9 @@ server.use(function (req, res, next) {
 });
 
 // Routes
-server.get('/todos', function(req, res, next) {
-  database.getAll(function(todos) {
-    res.send(todos);
+server.get('/todos', function (req, res, next) {
+  database.getAll(function (todos) {
+    res.send(todos); 
     next();
   });
 });

@@ -22,10 +22,10 @@ npm install
 
 ```bash
 # Run in terminal
-npm run server
+npm run serve
 ```
 
-Debug in Visual Studio Code with <kbd>f5</kbd>
+Instead you can also debug in Visual Studio Code with pressing the <kbd>f5</kbd> key.
 
 **Frontend**
 

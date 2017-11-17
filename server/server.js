@@ -4,11 +4,9 @@ var _ = require('lodash');
 
 var database = require('./database');
 
-// Create server
 var server = express();
 server.use(bodyParser.json());
 
-// Middleware
 server.use(function (req, res, next) {
   // allow origin for demo purposes
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -18,9 +16,9 @@ server.use(function (req, res, next) {
 });
 
 // Routes
-server.get('/todos', function(req, res, next) {
-  database.getAll(function(todos) {
-    res.send(todos);
+server.get('/todos', function (req, res, next) {
+  database.getAll(function (todos) {
+    res.send(todos); 
     next();
   });
 });
